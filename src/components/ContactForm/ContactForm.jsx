@@ -2,9 +2,8 @@ import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import css from "./ContactForm.module.css";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { nanoid } from "nanoid/non-secure";
 
 const schema = yup.object({
   name: yup.string().min(3).max(50).required(),
@@ -19,7 +18,6 @@ const ContactForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(
       addContact({
-        id: nanoid(),
         name: values.name,
         number: values.number,
       }),
