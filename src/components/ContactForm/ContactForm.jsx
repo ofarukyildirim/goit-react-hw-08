@@ -2,7 +2,8 @@ import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import css from "./ContactForm.module.css";
-import { addContact } from "../../redux/actions";
+// import { addContact } from "../../redux/actions";
+import { addContact } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 
 const schema = yup.object({
